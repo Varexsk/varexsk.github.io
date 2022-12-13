@@ -1,30 +1,21 @@
-let tg = window.Telegram.WebApp;
-
-tg.expand();
-
-tg.MainButton.textColor = "#FFFFFF";
-tg.MainButton.color = "#2cab37";
+// Типовая ссылка на страницу со статьями (без номера в конце)
 
 
-let username = document.getElementById("Username");
-let password = document.getElementById("inputPassword");
+alert("dasdas")
 
-let button_send = document.getElementById("send")
-
-button_send.addEventListener("click", function(){
-	if (tg.MainButton.isVisible) {
-		tg.MainButton.hide();
-	}
-	else {
-		tg.MainButton.setText("Вы выбрали товар 1!");
-		item = "1";
-		tg.MainButton.show();
-	}
-});
+const baseLink = 'https://wtis.vseinstrumenti.ru/symfony/login';
 
 
-
-Telegram.WebApp.onEvent("mainButtonClicked", function(){
-	tg.sendData(item);
-});
-
+document.querySelector("button").addEventListener('click', function start(e) {
+    let username = document.getElementById("Username").value
+    let password = document.getElementById("Password").value
+    let html = axios({
+      method: 'post',
+      url: baseLink,
+      data: {
+        "_username": username,
+        "_password": password
+      },
+    });
+    document.getElementById("text").textContent = html.content
+  });
