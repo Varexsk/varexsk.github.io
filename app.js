@@ -1,7 +1,7 @@
 // Типовая ссылка на страницу со статьями (без номера в конце)
 
 
-alert("dasdas")
+alert("!!!!!!!!!!!!")
 
 const baseLink = 'https://wtis.vseinstrumenti.ru/symfony/login';
 
